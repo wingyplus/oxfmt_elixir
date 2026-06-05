@@ -1,0 +1,14 @@
+[package]
+name = "oxfmt_nif"
+version = "0.1.0"
+authors = []
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+oxc_allocator = { git = "https://github.com/oxc-project/oxc", package = "oxc_allocator" }
+oxc_formatter = { git = "https://github.com/oxc-project/oxc", package = "oxc_formatter" }
+oxc_span = { git = "https://github.com/oxc-project/oxc", package = "oxc_span" }
+rustler = "0.38.0"
