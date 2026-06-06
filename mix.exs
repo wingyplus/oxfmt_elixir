@@ -22,6 +22,7 @@ defmodule Oxfmt.MixProject do
 
   defp deps do
     [
+      {:phoenix_live_view, "~> 1.2.0-rc", optional: true},
       {:rustler_precompiled, "~> 0.9"},
       {:rustler, "~> 0.38", optional: true}
     ]

@@ -14,6 +14,29 @@ Oxfmt.format("const answer=1+1;", semicolons: :as_needed)
 # {:ok, "const answer = 1 + 1\n"}
 ```
 
+## Phoenix LiveView
+
+`phoenix_live_view` is an optional dependency. When
+`Phoenix.LiveView.HTMLFormatter.TagFormatter` is available, oxfmt provides a tag
+formatter for JavaScript inside HEEx `<script>` tags:
+
+```elixir
+[
+  plugins: [Phoenix.LiveView.HTMLFormatter],
+  inputs: ["*.{heex,ex,exs}", "{config,lib,test}/**/*.{heex,ex,exs}"],
+  tag_formatters: %{script: Oxfmt.Phoenix.LiveView.TagFormatter}
+]
+```
+
+Pass oxfmt options through the formatter config:
+
+```elixir
+[
+  tag_formatters: %{script: Oxfmt.Phoenix.LiveView.TagFormatter},
+  oxfmt: [semicolons: :as_needed]
+]
+```
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
