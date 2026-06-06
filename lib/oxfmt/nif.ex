@@ -3,5 +3,5 @@ defmodule Oxfmt.NIF do
 
   use Rustler, otp_app: :oxfmt, crate: :oxfmt_nif
 
-  def format(_source), do: :erlang.nif_error(:nif_not_loaded)
+  def format(_source, _opts), do: :erlang.nif_error(:nif_not_loaded)
 end

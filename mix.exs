@@ -19,7 +19,7 @@ defmodule Oxfmt.MixProject do
 
   defp deps do
     [
-      {:rustler, "~> 0.38"},
+      {:rustler, "~> 0.38"}
     ]
   end
 end

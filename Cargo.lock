@@ -443,6 +443,7 @@ version = "0.1.0"
 dependencies = [
  "oxc_allocator",
  "oxc_formatter",
+ "oxc_formatter_core",
  "oxc_span",
  "rustler",
 ]
