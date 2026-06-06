@@ -11,7 +11,7 @@ use rustler::NifMap;
 #[rustler::nif]
 fn format(source: String, options: FormatterOptions) -> Result<String, String> {
     let allocator = Allocator::default();
-    let source_type = SourceType::default();
+    let source_type = SourceType::default().with_typescript(true);
     let options = options.try_into()?;
     let formatted = oxc_formatter::format(&allocator, &source, source_type, options, None)
         .map_err(|error| error.to_string())?;

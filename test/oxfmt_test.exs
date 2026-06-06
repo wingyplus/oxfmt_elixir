@@ -6,6 +6,11 @@ defmodule OxfmtTest do
     assert Oxfmt.format("const answer=1+1;") == {:ok, "const answer = 1 + 1;\n"}
   end
 
+  test "formats TypeScript source code with the native formatter" do
+    assert Oxfmt.format("const answer:number=1+1;") ==
+             {:ok, "const answer: number = 1 + 1;\n"}
+  end
+
   test "formats with keyword options" do
     assert Oxfmt.format("const answer=1+1;", semicolons: :as_needed) ==
              {:ok, "const answer = 1 + 1\n"}

@@ -1,6 +1,6 @@
 defmodule Oxfmt do
   @moduledoc """
-  JavaScript formatter powered by Oxc.
+  JavaScript and TypeScript formatter powered by Oxc.
   """
 
   @option_defaults [
@@ -25,7 +25,7 @@ defmodule Oxfmt do
   ]
 
   @doc """
-  Formats JavaScript source code.
+  Formats JavaScript or TypeScript source code.
 
   ## Options
 
@@ -52,6 +52,9 @@ defmodule Oxfmt do
 
       iex> Oxfmt.format("const answer=1+1;")
       {:ok, "const answer = 1 + 1;\\n"}
+
+      iex> Oxfmt.format("const answer:number=1+1;")
+      {:ok, "const answer: number = 1 + 1;\\n"}
 
       iex> Oxfmt.format("const answer=1+1;", semicolons: :as_needed)
       {:ok, "const answer = 1 + 1\\n"}
